@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: /Users/danboru/AndroidStudioProjects/OpenCv/libraries/opencv/src/org/opencv/engine/OpenCVEngineInterface.aidl
+ * Original file: /Users/danboru/AndroidStudioProjects/ColorDetector/libraries/opencv/src/org/opencv/engine/OpenCVEngineInterface.aidl
  */
 package org.opencv.engine;
 /**

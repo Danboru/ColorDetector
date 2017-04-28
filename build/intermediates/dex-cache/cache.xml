@@ -3,57 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="/Users/danboru/.android/build-cache/69013c3ed7031efd52d7550f15cd23b3ac33b68b/output/jars/libs/internal_impl-22.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/Users/danboru/AndroidStudioProjects/OpenCv/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-22.2.0_8d593925a866622582d8e8cde8777002e1b8fab7/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/danboru/.android/build-cache/06e71d3411e9ad4f63d9b2c4f5f6aa0af4951767/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex dex="/Users/danboru/AndroidStudioProjects/OpenCv/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_4c076c77219e3f6236bdacbd5cbcb839fbb548ac/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/danboru/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/Users/danboru/AndroidStudioProjects/OpenCv/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-22.2.0_d794ee5dd54a21f18dcabcd719d1e1cf0c9218c9/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/danboru/AndroidStudioProjects/OpenCv/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/Users/danboru/AndroidStudioProjects/ColorDetector/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
-        <dex dex="/Users/danboru/AndroidStudioProjects/OpenCv/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_157eb99cb581e3805b90d5f175b2900a6a4a8f2d/classes.dex" />
+        <dex dex="/Users/danboru/AndroidStudioProjects/ColorDetector/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_2c47221b13473b53e4440af30418f869b5d6261f/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/danboru/AndroidStudioProjects/OpenCv/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/Users/danboru/AndroidStudioProjects/ColorDetector/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="a08e610ff3481e9f2184dc94d6d606a552db06e7">
-        <dex dex="/Users/danboru/AndroidStudioProjects/OpenCv/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_f43829f12717e864f8396f273aa8494245dd497a/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/danboru/.android/build-cache/69013c3ed7031efd52d7550f15cd23b3ac33b68b/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex dex="/Users/danboru/AndroidStudioProjects/OpenCv/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c2b9c00b92a297a402d89e46e257256670aedd70/classes.dex" />
+        sha1="e8fea485b9f1fb65ef86ac48cd19f7bfe9b1602c">
+        <dex dex="/Users/danboru/AndroidStudioProjects/ColorDetector/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_3b7f170236e3c07b6bb12186debf7bab2d2b9cbf/classes.dex" />
     </item>
 
 </items>
