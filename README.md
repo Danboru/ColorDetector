@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # OpenCV for Android Color Detection
 ### Computer Vision Tutorial
 
@@ -12,3 +13,6 @@ This program accompanies the tutorial linked below, showing detailed instruction
 
 
 http://timrobinson.space
+=======
+# ColorDetector
+>>>>>>> 095a114eb1a686d0a8b5ce300d452f29ba163cdd
