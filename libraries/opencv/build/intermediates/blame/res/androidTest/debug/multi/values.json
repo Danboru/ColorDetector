@@ -1,5 +1,9 @@
 [
     {
+        "outputFile": "/Users/danboru/AndroidStudioProjects/OpenCv/libraries/opencv/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "map": []
+    },
+    {
         "outputFile": "/Users/friendofdata/AndroidStudioProjects/OpenCVTutorial/libraries/opencv/build/intermediates/res/merged/androidTest/debug/values/values.xml",
         "map": []
     }
