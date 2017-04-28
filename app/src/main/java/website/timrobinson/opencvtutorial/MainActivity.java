@@ -111,6 +111,7 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
+
         int cols = mRgba.cols();
         int rows = mRgba.rows();
 
@@ -159,6 +160,7 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
         touch_color.setTextColor(Color.rgb((int) mBlobColorRgba.val[0],
                 (int) mBlobColorRgba.val[1],
                 (int) mBlobColorRgba.val[2]));
+
         touch_coordinates.setTextColor(Color.rgb((int)mBlobColorRgba.val[0],
                 (int)mBlobColorRgba.val[1],
                 (int)mBlobColorRgba.val[2]));
