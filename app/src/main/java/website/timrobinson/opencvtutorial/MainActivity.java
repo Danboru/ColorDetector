@@ -1,5 +1,6 @@
 package website.timrobinson.opencvtutorial;
 
+import android.app.Activity;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,8 +8,10 @@ import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnTouchListener;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
@@ -22,7 +25,7 @@ import org.opencv.core.Rect;
 import org.opencv.core.Scalar;
 import org.opencv.imgproc.Imgproc;
 
-public class MainActivity extends AppCompatActivity implements OnTouchListener, CvCameraViewListener2 {
+public class MainActivity extends Activity implements OnTouchListener, CvCameraViewListener2 {
 
     private CameraBridgeViewBase mOpenCvCameraView;
     private Mat mRgba;
@@ -52,9 +55,15 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
         }
     };
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_main);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -115,11 +124,13 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
         int cols = mRgba.cols();
         int rows = mRgba.rows();
 
+        //Get koordinat
         double yLow = (double)mOpenCvCameraView.getHeight() * 0.2401961;
         double yHigh = (double)mOpenCvCameraView.getHeight() * 0.7696078;
 
         double xScale = (double)cols / (double)mOpenCvCameraView.getWidth();
         double yScale = (double)rows / (yHigh - yLow);
+
 
         x = event.getX();
         y = event.getY();
@@ -157,13 +168,20 @@ public class MainActivity extends AppCompatActivity implements OnTouchListener, 
                 + String.format("%02X", (int)mBlobColorRgba.val[1])
                 + String.format("%02X", (int)mBlobColorRgba.val[2]));
 
-        touch_color.setTextColor(Color.rgb((int) mBlobColorRgba.val[0],
-                (int) mBlobColorRgba.val[1],
-                (int) mBlobColorRgba.val[2]));
+//        touch_color.setTextColor(Color.rgb((int) mBlobColorRgba.val[0],
+//                (int) mBlobColorRgba.val[1],
+//                (int) mBlobColorRgba.val[2]));
+//
+//        touch_coordinates.setTextColor(Color.rgb((int)mBlobColorRgba.val[0],
+//                (int)mBlobColorRgba.val[1],
+//                (int)mBlobColorRgba.val[2]));
 
-        touch_coordinates.setTextColor(Color.rgb((int)mBlobColorRgba.val[0],
+        View view = findViewById(R.id.percobaanubah);
+        view.setBackgroundColor(Color.rgb((int)mBlobColorRgba.val[0],
                 (int)mBlobColorRgba.val[1],
                 (int)mBlobColorRgba.val[2]));
+
+        //Toast.makeText(this, "Berhasil", Toast.LENGTH_SHORT).show();
 
         return false;
     }
