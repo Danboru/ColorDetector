@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
+        jar="/Users/danboru/AndroidStudioProjects/ColorDetector/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="2f703234585c97cfb15beb28a54b47d36bf4abec">
+        <dex dex="/Users/danboru/AndroidStudioProjects/ColorDetector/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_3b7f170236e3c07b6bb12186debf7bab2d2b9cbf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/danboru/AndroidStudioProjects/ColorDetector/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
         sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
         <dex dex="/Users/danboru/AndroidStudioProjects/ColorDetector/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_2c47221b13473b53e4440af30418f869b5d6261f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/danboru/AndroidStudioProjects/ColorDetector/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="e8fea485b9f1fb65ef86ac48cd19f7bfe9b1602c">
-        <dex dex="/Users/danboru/AndroidStudioProjects/ColorDetector/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_3b7f170236e3c07b6bb12186debf7bab2d2b9cbf/classes.dex" />
     </item>
 
 </items>

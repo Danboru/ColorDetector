@@ -38,11 +38,13 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
     double x = -1;
     double y = -1;
 
+    //Fungsi untuk mengaembalikan ke keadaan awal
     private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
         @Override
         public void onManagerConnected(int status) {
             switch (status) {
                 case LoaderCallbackInterface.SUCCESS: {
+                    //Mengaktfkan view ketika status dari
                     mOpenCvCameraView.enableView();
                     mOpenCvCameraView.setOnTouchListener(MainActivity.this);
                 }
@@ -55,15 +57,25 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
         }
     };
 
+    //Fungsi yang akan di jalankan setelah contruvtor di jalankan
 
-
+    /**
+     *
+     * Fungsi ini berisikan beberapa perintah utama
+     * yang akan menerima dan mengolah beberapa fungsi yang ada di dalam kelas ini
+     * dan yang ada di dalam kelas library yang di gunakan
+     *
+     *
+     * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //Request screen agar screen bisa fullscreen
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        //Men set view yang akan di gunakan
         setContentView(R.layout.activity_main);
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -100,6 +112,7 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
             mOpenCvCameraView.disableView();
     }
 
+    //
     @Override
     public void onCameraViewStarted(int width, int height) {
         mRgba = new Mat();
@@ -118,6 +131,9 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
         return mRgba;
     }
 
+    /**
+     * Fungs yang di gunakan untuk menerima action dari screen yang di sentuh
+     * */
     @Override
     public boolean onTouch(View v, MotionEvent event) {
 
@@ -131,10 +147,12 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
         double xScale = (double)cols / (double)mOpenCvCameraView.getWidth();
         double yScale = (double)rows / (yHigh - yLow);
 
-
+        //Mendapatkan koordinat view dari action yang di berikan oleh user
+        //dari action tersebuat data akan di simpan dan nantinya akan di tampilkan di view yang bersangkutan
         x = event.getX();
         y = event.getY();
 
+        //
         y = y - yLow;
 
         x = x * xScale;
@@ -152,6 +170,7 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
         touchedRect.width = 8;
         touchedRect.height = 8;
 
+        //Varible yang masih belum tahu fungsi nya buat apa
         Mat touchedRegionRgba = mRgba.submat(touchedRect);
 
         Mat touchedRegionHsv = new Mat();
@@ -164,6 +183,12 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
 
         mBlobColorRgba = convertScalarHsv2Rgba(mBlobColorHsv);
 
+        //Set color yang sudah di dapatkan dari proses sebelumnya
+        /**
+         * Setiap hasil yang di dapatkan akan di set ke dalam view yang sebelumnya sudah di tentukan
+         * di sini di gunakan 2 view untuk menampilkan data yang sebelumnya sudah di dapatkan
+         *
+         * */
         touch_color.setText("Color: #" + String.format("%02X", (int)mBlobColorRgba.val[0])
                 + String.format("%02X", (int)mBlobColorRgba.val[1])
                 + String.format("%02X", (int)mBlobColorRgba.val[2]));
@@ -176,6 +201,7 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
 //                (int)mBlobColorRgba.val[1],
 //                (int)mBlobColorRgba.val[2]));
 
+        //Menginisialisasi view yang akan di gunakan
         View view = findViewById(R.id.percobaanubah);
         view.setBackgroundColor(Color.rgb((int)mBlobColorRgba.val[0],
                 (int)mBlobColorRgba.val[1],
@@ -186,11 +212,13 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
         return false;
     }
 
+    //Belum tahu ini itu fungsinya buat apa
     private Scalar convertScalarHsv2Rgba(Scalar hsvColor) {
         Mat pointMatRgba = new Mat();
         Mat pointMatHsv = new Mat(1, 1, CvType.CV_8UC3, hsvColor);
         Imgproc.cvtColor(pointMatHsv, pointMatRgba, Imgproc.COLOR_HSV2RGB_FULL, 4);
 
+        //Mengembalikan Scalar yang di gunakan untuk Menentukan koordinat (masih kemungkinan)
         return new Scalar(pointMatRgba.get(0, 0));
     }
 }
