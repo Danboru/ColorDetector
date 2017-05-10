@@ -65,7 +65,6 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
      * yang akan menerima dan mengolah beberapa fungsi yang ada di dalam kelas ini
      * dan yang ada di dalam kelas library yang di gunakan
      *
-     *
      * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +77,7 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
         //Men set view yang akan di gunakan
         setContentView(R.layout.activity_main);
 
+        //Menjaga kamera agar tetap menyala
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         touch_coordinates = (TextView) findViewById(R.id.touch_coordinates);
@@ -164,6 +164,13 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
 
         Rect touchedRect = new Rect();
 
+        //Apa ini variable ini di gunakan untuk menympan koordinat yang duidapat dari even touch ?
+
+        /**
+         *
+         *
+         *
+         * */
         touchedRect.x = (int)x;
         touchedRect.y = (int)y;
 
@@ -172,15 +179,19 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
 
         //Varible yang masih belum tahu fungsi nya buat apa
         Mat touchedRegionRgba = mRgba.submat(touchedRect);
-
         Mat touchedRegionHsv = new Mat();
         Imgproc.cvtColor(touchedRegionRgba, touchedRegionHsv, Imgproc.COLOR_RGB2HSV_FULL);
 
+        //Fungsi ini untuk menentukan
         mBlobColorHsv = Core.sumElems(touchedRegionHsv);
         int pointCount = touchedRect.width * touchedRect.height;
-        for (int i = 0; i < mBlobColorHsv.val.length; i++)
-            mBlobColorHsv.val[i] /= pointCount;
 
+        for (int i = 0; i < mBlobColorHsv.val.length; i++)
+        {
+            mBlobColorHsv.val[i] /= pointCount;
+        }
+
+        //
         mBlobColorRgba = convertScalarHsv2Rgba(mBlobColorHsv);
 
         //Set color yang sudah di dapatkan dari proses sebelumnya
@@ -190,7 +201,7 @@ public class MainActivity extends Activity implements OnTouchListener, CvCameraV
          *
          * */
         touch_color.setText("Color: #" + String.format("%02X", (int)mBlobColorRgba.val[0])
-                + String.format("%02X", (int)mBlobColorRgba.val[1])
+                + String.format("%02X", (int)mBlobColorRgba.val[1]) //Melakukan
                 + String.format("%02X", (int)mBlobColorRgba.val[2]));
 
 //        touch_color.setTextColor(Color.rgb((int) mBlobColorRgba.val[0],
